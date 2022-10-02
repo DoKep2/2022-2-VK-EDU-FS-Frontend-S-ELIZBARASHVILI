@@ -1,0 +1,21 @@
+name: CI
+on:
+  push:
+    branches: [homework1]
+  pull_request:
+    branches: [homework1]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+      - name: Install modules
+        working-directory: ${{ steps.extract_branch.outputs.branch }}
+        run: yarn
+      - name: Run tests
+        working-directory: ${{ steps.extract_branch.outputs.branch }}
+        run: yarn test
