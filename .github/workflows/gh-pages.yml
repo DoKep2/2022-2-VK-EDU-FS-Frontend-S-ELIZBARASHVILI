@@ -2,9 +2,9 @@ name: GitHub Pages
 run-name: ${{ github.actor }} is rolling out a new version of the app 🚀
 on:
   push:
-    branches: [homework2 homework3, homework4]
+    branches: [homework2, homework3, homework4]
   pull_request:
-    branches: [homework2 homework3, homework4]
+    branches: [homework2, homework3, homework4]
 jobs:
   Build-and-Deploy:
     runs-on: ubuntu-latest
