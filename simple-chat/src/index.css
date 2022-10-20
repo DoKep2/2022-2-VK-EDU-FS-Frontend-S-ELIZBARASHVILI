@@ -1,0 +1,82 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    background-color: #fff;
+    color: #333;
+    font-size: 15px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.sidebar {
+    width: 388px;
+    height: 100%;
+    border: 1px solid gray;
+}
+
+.sidebar-header {
+    background-color: #8E24AA;
+    display: flex;
+    flex-direction: row;
+    height: 56px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.search {
+
+}
+
+.chat-list {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+}
+
+.chat {
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 10px;
+    align-items: flex-start;
+    position: relative;
+    flex: 1 1 auto;
+    padding: 0.5625rem;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.dialog-title {
+    position: relative;
+    font-weight: bold;
+}
+
+.user-caption {
+    position: relative;
+    flex: 1 1 auto;
+    overflow: hidden;
+    padding: 0.0625rem 0.4375rem 0.0625rem 0.5625rem;
+}
+
+.dialog-subtitle {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.dialog-avatar {
+    display: flex;
+    flex-direction: row;
+    height: 54px;
+    width: 54px;
+    border-radius: 50%;
+}
