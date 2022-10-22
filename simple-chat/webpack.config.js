@@ -12,7 +12,7 @@ const BUILD_PATH = path.resolve(__dirname, 'build');
 module.exports = {
     context: SRC_PATH,
     entry: {
-        index: './index.js',
+        index: './index.js'
     },
     output: {
         path: BUILD_PATH,
@@ -53,6 +53,10 @@ module.exports = {
                         loader: 'css-loader',
                     },
                 ],
+            },
+                        {
+                test: /\.(png|jpg|svg|gif)$/,
+                use: ['file-loader']
             },
         ],
     },

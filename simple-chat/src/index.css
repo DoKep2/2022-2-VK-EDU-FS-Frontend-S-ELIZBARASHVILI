@@ -8,6 +8,10 @@ html {
     box-sizing: inherit;
 }
 
+:root {
+    --gray-background-color: #212121;
+}
+
 body {
     margin: 0;
     background-color: #fff;
@@ -16,6 +20,8 @@ body {
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 400;
     line-height: 20px;
+    display: flex;
+    flex-direction: row;
 }
 
 .sidebar {
@@ -34,6 +40,7 @@ body {
     padding: 0 1rem;
 }
 
+
 .search {
 
 }
@@ -42,11 +49,15 @@ body {
     display: flex;
     flex-direction: column;
     padding: 8px;
+    background-color: var(--gray-background-color);
+}
+
+.chat-list:hover {
+    overflow-y: scroll;
 }
 
 .chat {
     cursor: pointer;
-    overflow: hidden;
     border-radius: 10px;
     align-items: flex-start;
     position: relative;
@@ -59,18 +70,19 @@ body {
 .dialog-title {
     position: relative;
     font-weight: bold;
+    color: white;
 }
 
 .user-caption {
     position: relative;
     flex: 1 1 auto;
-    overflow: hidden;
     padding: 0.0625rem 0.4375rem 0.0625rem 0.5625rem;
 }
 
 .dialog-subtitle {
     position: relative;
     margin-bottom: 20px;
+    color: white;
 }
 
 .dialog-avatar {
@@ -80,3 +92,12 @@ body {
     width: 54px;
     border-radius: 50%;
 }
+
+.main-column {
+    margin: 0 auto;
+    width: 75%;
+    background-image: url("./static/tg_backgorund.jpg");
+    position: relative;
+    overflow: hidden;
+}
+
