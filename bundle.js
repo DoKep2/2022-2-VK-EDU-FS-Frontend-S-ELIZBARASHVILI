@@ -105,7 +105,19 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./inde
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./index.css\");\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_0__);\n\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./index.css\");\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _static_tg_backgorund_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./static/tg_backgorund.jpg */ \"./static/tg_backgorund.jpg\");\n\n\n\n//# sourceURL=webpack:///./index.js?");
+
+/***/ }),
+
+/***/ "./static/tg_backgorund.jpg":
+/*!**********************************!*\
+  !*** ./static/tg_backgorund.jpg ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"7bddb8bfc01201980cfa0e9abbe4fa1e.jpg\");\n\n//# sourceURL=webpack:///./static/tg_backgorund.jpg?");
 
 /***/ })
 
