@@ -63,10 +63,12 @@ function reloadMessages(localStorageKey){
 
 function showMessages(localStorageKey) {
     const history = JSON.parse(localStorage.getItem(localStorageKey));
+    if(history == null) return
     let lastMessage = document.querySelector(LAST_MESSAGE_SELECTOR);
     if (lastMessage == null) {
         lastMessage = document.querySelector(".dialog-header")
     }
+    history.reverse()
     history.forEach(h => {
         const newDiv = document.createElement(P_TAG_NAME);
         newDiv.setAttribute(CLASS_ATTRIBUTE_NAME, h.name);
@@ -82,5 +84,6 @@ function sendMessage(text, localStorageKey) {
     currentHistory.push(message);
     localStorage.setItem(localStorageKey, JSON.stringify(currentHistory));
 }
+setExampleMessages()
 showMessages("chatHistory")
 
