@@ -16,7 +16,9 @@ module.exports = {
     },
     output: {
         path: BUILD_PATH,
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        clean: true,
+        assetModuleFilename: 'assets/[name][ext]'
     },
     module: {
         strictExportPresence: true,
@@ -54,10 +56,14 @@ module.exports = {
                     },
                 ],
             },
-                        {
-                test: /\.(png|jpg|svg|gif)$/,
-                use: ['file-loader']
+            {
+                test: /\.(png|jpg|svg|gif|mp4)$/,
+                type: 'asset/resource'
             },
+            {
+                test: /\.html$/i,
+                loader: 'html-loader'
+            }
         ],
     },
     plugins: [
