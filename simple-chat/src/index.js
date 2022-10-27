@@ -1,5 +1,6 @@
 import './index.css';
 import './index.html'
+import '../back/config/start'
 
 const CLASS_ATTRIBUTE_NAME = "class";
 const P_TAG_NAME = "p";
@@ -10,24 +11,6 @@ const INPUT_MESSAGE_INPUT_SELECTOR = ".input-message-input"
 
 const form = document.querySelector(INPUT_MESSAGE_CONTAINER_SELECTOR);
 const input = document.querySelector(INPUT_MESSAGE_INPUT_SELECTOR);
-
-const ex = [
-    {
-        "datetime": "",
-        "name": "me",
-        "data": " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto dolorem facilis inventore laboriosam laborum laudantium, mollitia nemo nostrum officia quae qui repellat voluptatum? Ad architecto est, incidunt maxime qui sed. Accusamus consectetur cumque cupiditate debitis dignissimos facere id in minus necessitatibus, nobis odit quos repellendus sint tempora, temporibus. Deserunt!"
-    },
-    {
-        "datetime": "",
-        "name": "user",
-        "data": "sadlsadl zc zxklz klxczx c"
-    },
-    {
-        "datetime": "",
-        "name": "user",
-        "data": "lorem123 aseqwe "
-    }
-]
 
 form.addEventListener('submit', handleSubmit.bind(this));
 form.addEventListener('keypress', handleKeyPress.bind(this));
