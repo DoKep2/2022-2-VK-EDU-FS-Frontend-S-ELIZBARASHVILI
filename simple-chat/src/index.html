@@ -164,38 +164,10 @@
     <div class="dialog-header header">
     </div>
     <div class="dialog-data">
-    <form class="form" action="/">
-            <div class="message"></div>
-            <input class="form-input" name="message-text" placeholder="Введите сообщение" type="text">
-    </form>
+        <div class="input-message-container">
+            <input class="input-message-input" placeholder="Messsage"/>
+        </div>
     </div>
-    <style>
-            .form {
-                width: 100%;
-                display: inline-block;
-                border: 1px solid rgba(25, 25, 25, 0.32);
-                position: absolute;
-                bottom: 0;
-            }
-
-            .message {
-                color: red;
-                /* border: 1px solid; */
-                border-radius: 4px;
-                margin: 4px 0;
-                padding: 4px;
-            }
-
-            input[type=submit] {
-                visibility: collapse;
-            }
-
-            input {
-                border: 0;
-                outline: none;
-                width: calc(100% - 2px);
-            }
-        </style>
 </div>
 </body>
 </html>

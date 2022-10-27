@@ -1,4 +1,4 @@
-# Домашнее задание №3
+# Домашнее задание №
 
 Прошу @martinkomitsky, @haseprogram или @vaganov-spb проверить его.
 
