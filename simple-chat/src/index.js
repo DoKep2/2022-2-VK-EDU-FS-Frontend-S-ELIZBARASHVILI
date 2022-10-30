@@ -7,31 +7,16 @@ const DIV_TAG_NAME = "div";
 const SPAN_TAG_NAME = "span";
 const I_TAG_NAME = "i";
 const CHAT_HISTORY_KEY = "chatHistory";
+
 const LAST_MESSAGE_SELECTOR = ".dialog-data div:nth-last-child(1)"
 const INPUT_MESSAGE_CONTAINER_SELECTOR = ".input-message-container"
 const INPUT_MESSAGE_INPUT_SELECTOR = ".input-message-input"
+const DIALOG_DATA_SELECTOR = ".dialog-data"
+
 const MESSAGE_TIME_CLASS = "message-time"
 const DONE_ALL_CLASS = "done-all";
 const form = document.querySelector(INPUT_MESSAGE_CONTAINER_SELECTOR);
 const input = document.querySelector(INPUT_MESSAGE_INPUT_SELECTOR);
-
-const ex = [
-    {
-        "datetime": "",
-        "name": "me",
-        "data": " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto dolorem facilis inventore laboriosam laborum laudantium, mollitia nemo nostrum officia quae qui repellat voluptatum? Ad architecto est, incidunt maxime qui sed. Accusamus consectetur cumque cupiditate debitis dignissimos facere id in minus necessitatibus, nobis odit quos repellendus sint tempora, temporibus. Deserunt!"
-    },
-    {
-        "datetime": "",
-        "name": "user",
-        "data": "sadlsadl zc zxklz klxczx c"
-    },
-    {
-        "datetime": "",
-        "name": "user",
-        "data": "lorem123 aseqwe "
-    }
-]
 
 form.addEventListener('submit', handleSubmit.bind(this));
 form.addEventListener('keypress', handleKeyPress.bind(this));
@@ -95,6 +80,8 @@ function showMessages(localStorageKey) {
         newDivContainer.appendChild(newDiv);
         lastMessage.parentNode.insertBefore(newDivContainer, lastMessage.previousSibling);
     })
+    const dialogData = document.querySelector(DIALOG_DATA_SELECTOR);
+    dialogData.scrollTop = dialogData.scrollHeight;
 }
 
 function sendMessage(text, localStorageKey) {
@@ -110,7 +97,6 @@ function sendMessage(text, localStorageKey) {
 function getDateTimeNow() {
     return new Date().toLocaleTimeString().substr(0, 5);
 }
-
 
 prepareLocalStorage()
 showMessages(CHAT_HISTORY_KEY)
