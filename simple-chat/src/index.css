@@ -159,13 +159,16 @@ body {
 }
 
 p {
+    width: max-content;
     position: relative;
     max-width: 30em;
     background-color: #fff;
-    padding: 1.125em 1.5em;
+    padding: 1.125em 1em;
     font-size: 1.25em;
     border-radius: 1rem;
-    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);;
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+    overflow-wrap: anywhere;
+    display: flex;
 }
 
 /*todo*/
@@ -173,8 +176,15 @@ p.user {
     margin-left: 10px;
 }
 
-p.me {
-    margin-left: 550px;
+.me-message-container{
+    display: flex;
+    justify-content: end;
+    margin-right: 30px;
+}
+.user-message-container{
+    display: flex;
+    justify-content: start;
+    margin-left: 30px;
 }
 
 p.user::before {
@@ -182,13 +192,11 @@ p.user::before {
     position: absolute;
     width: 0;
     height: 0;
-    bottom: 100%;
-    left: 1.5em;
+    left: -.60rem;
+    top: calc(100% - .75rem);
     border: .75rem solid transparent;
     border-top: none;
-
     border-bottom-color: #fff;
-    filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
 }
 
 p.me::before {
@@ -196,12 +204,11 @@ p.me::before {
     position: absolute;
     width: 0;
     height: 0;
-    bottom: 100%;
-    right: 1.5em;
+    right: -.60rem;
+    top: calc(100% - .75rem);
     border: .75rem solid transparent;
     border-top: none;
     border-bottom-color: #fff;
-    filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
 }
 
 /*todo: Duplicate*/
@@ -216,6 +223,12 @@ p.me::before {
     margin-bottom: 30px;
     background-color: var(--gray-background-color);
     border-radius: 0.75rem;
+}
+
+.message-time {
+    font-size: 12px;
+    position: relative;
+    top: 100%;
 }
 
 .input-message-input {
@@ -234,5 +247,11 @@ p.me::before {
 .search-box {
     position: relative;
     width: 85%;
+}
 
+.done-all {
+    font-size: 15px;
+    position: relative;
+    left: 2%;
+    top: calc(100% + 3px);
 }

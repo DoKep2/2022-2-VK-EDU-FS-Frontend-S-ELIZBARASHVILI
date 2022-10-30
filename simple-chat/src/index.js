@@ -3,11 +3,15 @@ import './index.html'
 
 const CLASS_ATTRIBUTE_NAME = "class";
 const P_TAG_NAME = "p";
+const DIV_TAG_NAME = "div";
+const SPAN_TAG_NAME = "span";
+const I_TAG_NAME = "i";
 const CHAT_HISTORY_KEY = "chatHistory";
-const LAST_MESSAGE_SELECTOR = ".dialog-data p:nth-last-child(1)"
+const LAST_MESSAGE_SELECTOR = ".dialog-data div:nth-last-child(1)"
 const INPUT_MESSAGE_CONTAINER_SELECTOR = ".input-message-container"
 const INPUT_MESSAGE_INPUT_SELECTOR = ".input-message-input"
-
+const MESSAGE_TIME_CLASS = "message-time"
+const DONE_ALL_CLASS = "done-all";
 const form = document.querySelector(INPUT_MESSAGE_CONTAINER_SELECTOR);
 const input = document.querySelector(INPUT_MESSAGE_INPUT_SELECTOR);
 
@@ -75,10 +79,21 @@ function showMessages(localStorageKey) {
         lastMessage = document.querySelector(".input-message-container")
     }
     history.forEach(h => {
+        const newDivContainer = document.createElement(DIV_TAG_NAME)
+        newDivContainer.setAttribute(CLASS_ATTRIBUTE_NAME, h.name + "-message-container")
         const newDiv = document.createElement(P_TAG_NAME);
         newDiv.setAttribute(CLASS_ATTRIBUTE_NAME, h.name);
         newDiv.appendChild(document.createTextNode(h.data));
-        lastMessage.parentNode.insertBefore(newDiv, lastMessage.previousSibling);
+        const newMessageTime = document.createElement(SPAN_TAG_NAME)
+        newMessageTime.setAttribute(CLASS_ATTRIBUTE_NAME, MESSAGE_TIME_CLASS);
+        newMessageTime.appendChild(document.createTextNode(h.datetime));
+        const newDoneAll = document.createElement(I_TAG_NAME)
+        newDoneAll.setAttribute(CLASS_ATTRIBUTE_NAME, "material-symbols-outlined " + DONE_ALL_CLASS);
+        newDiv.appendChild(newMessageTime);
+        newDoneAll.appendChild(document.createTextNode("Done_All"));
+        newDiv.appendChild(newDoneAll);
+        newDivContainer.appendChild(newDiv);
+        lastMessage.parentNode.insertBefore(newDivContainer, lastMessage.previousSibling);
     })
 }
 
@@ -87,10 +102,15 @@ function sendMessage(text, localStorageKey) {
     if (!currentHistory) {
         currentHistory = []
     }
-    const message = JSON.parse(`{"datetime":"${Date.now()}", "name":"me", "data":"${text}"}`);
+    const message = JSON.parse(`{"datetime":"${getDateTimeNow()}", "name":"me", "data":"${text}"}`);
     currentHistory.push(message);
     localStorage.setItem(localStorageKey, JSON.stringify(currentHistory));
 }
+
+function getDateTimeNow() {
+    return new Date().toLocaleTimeString().substr(0, 5);
+}
+
 
 prepareLocalStorage()
 showMessages(CHAT_HISTORY_KEY)
