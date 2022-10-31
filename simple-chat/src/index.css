@@ -133,6 +133,13 @@ body {
     border-radius: 50%;
 }
 
+.dialog-header-avatar {
+    margin-left: 10px;
+    height: 47px;
+    width: 47px;
+    border-radius: 50%;
+}
+
 .main-column {
     width: 75%;
     background-image: url("static/tg_backgorund.jpg");
@@ -159,10 +166,15 @@ i {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
     position: fixed;
     width: 100%;
     top: 0;
+}
+
+.dialog-header-title {
+    color: white;
+    margin-left: 15px;
 }
 
 p {
