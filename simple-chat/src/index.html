@@ -3,18 +3,24 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Send a message</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 </head>
 <body>
 <div class="sidebar">
     <div class="sidebar-header header">
-        Sidebar
-        <span>Messenger</span>
-        <div class="search">
-            Search
+        <i class="material-symbols-outlined burger">Dehaze</i>
+        <div class="search-box">
+            <i class="material-symbols-outlined" style="position: absolute; left: 30px; top: 10px">
+                Search
+            </i>
+            <input placeholder="Search" class="search">
         </div>
     </div>
     <div class="chat-list">
-        <div class="chat">
+        <div class="create-chat-container">
+            <i class="material-symbols-outlined" id="create-chat">Create</i>
+        </div>
+        <div class="chat" id="Валерон">
             <img class="dialog-avatar" src="static/valeron.jpg"/>
             <div class="message-data">
                 <div class="dialog-title">
@@ -25,7 +31,7 @@
                 </div>
             </div>
         </div>
-        <div class="chat">
+        <div class="chat" id="Это я">
             <img class="dialog-avatar"
                  src="http://cm1.narvii.com/8402/169a9567143a9fca54e9e114838ed4497c858b69_00.jpg">
             <div class="message-data">
@@ -37,7 +43,7 @@
                 </div>
             </div>
         </div>
-        <div class="chat">
+        <div class="chat" id="Lera Fedorova">
             <img class="dialog-avatar"
                  src="./static/lera-gif.gif">
             <div class="message-data">
@@ -49,7 +55,7 @@
                 </div>
             </div>
         </div>
-        <div class="chat">
+        <div class="chat" id="Тинькофф Старт: Чат">
             <img class="dialog-avatar"
                  src="./static/tink.jpg">
             <div class="message-data">
@@ -61,7 +67,7 @@
                 </div>
             </div>
         </div>
-        <div class="chat">
+        <div class="chat" id="ВЯЗЬМА-ФЛУД">
             <img class="dialog-avatar"
                  src="static/vyazma.jpg">
             <div class="message-data">
@@ -73,7 +79,7 @@
                 </div>
             </div>
         </div>
-        <div class="chat">
+        <div class="chat" id="DeusOps">
             <img class="dialog-avatar"
                  src="./static/deusops.jpg">
             <div class="message-data">
@@ -85,7 +91,7 @@
                 </div>
             </div>
         </div>
-        <div class="chat">
+        <div class="chat" id="ITMO ICPC">
             <img class="dialog-avatar"
                  src="./static/icpc.jpg">
             <div class="message-data">
@@ -97,7 +103,7 @@
                 </div>
             </div>
         </div>
-        <div class="chat">
+        <div class="chat" id="Frontend - VK Fullstack">
             <img class="dialog-avatar"
                  src="./static/front.jpg">
             <div class="message-data">
@@ -109,7 +115,7 @@
                 </div>
             </div>
         </div>
-        <div class="chat">
+        <div class="chat" id="Денис жирный">
             <img class="dialog-avatar"
                  src="./static/denis.jpg">
             <div class="message-data">
@@ -121,7 +127,7 @@
                 </div>
             </div>
         </div>
-        <div class="chat">
+        <div class="chat" id="sns_interships">
             <img class="dialog-avatar"
                  src="./static/sns.jpg">
             <div class="message-data">
@@ -133,7 +139,7 @@
                 </div>
             </div>
         </div>
-        <div class="chat">
+        <div class="chat" id="Backend - VK Fullstack">
             <img class="dialog-avatar"
                  src="./static/back.jpg">
             <div class="message-data">
@@ -145,7 +151,7 @@
                 </div>
             </div>
         </div>
-        <div class="chat">
+        <div class="chat" id="ClickHouse не тормозит">
             <img class="dialog-avatar"
                  src="./static/clickhouse.jpg">
             <div class="message-data">
@@ -164,38 +170,10 @@
     <div class="dialog-header header">
     </div>
     <div class="dialog-data">
-    <form class="form" action="/">
-            <div class="message"></div>
-            <input class="form-input" name="message-text" placeholder="Введите сообщение" type="text">
-    </form>
+        <div class="input-message-container">
+            <input class="input-message-input" placeholder="Messsage"/>
+        </div>
     </div>
-    <style>
-            .form {
-                width: 100%;
-                display: inline-block;
-                border: 1px solid rgba(25, 25, 25, 0.32);
-                position: absolute;
-                bottom: 0;
-            }
-
-            .message {
-                color: red;
-                /* border: 1px solid; */
-                border-radius: 4px;
-                margin: 4px 0;
-                padding: 4px;
-            }
-
-            input[type=submit] {
-                visibility: collapse;
-            }
-
-            input {
-                border: 0;
-                outline: none;
-                width: calc(100% - 2px);
-            }
-        </style>
 </div>
 </body>
 </html>
